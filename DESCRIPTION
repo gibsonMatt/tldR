@@ -1,5 +1,5 @@
 Package: tldR
-Title: Clear R documentation for nontechnical users.
+Title: tldR
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Mark",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "mpjuers@gmail.com",
            comment = c(ORCID = "https://orcid.org/0000-0002-3228-753"))
-Description: What the package does (one paragraph).
+Description: Clear, helpful, community-supported, simple documentation for R.
 License: `use_mit_license()`
 Encoding: UTF-8
 LazyData: true
