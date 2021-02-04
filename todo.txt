@@ -1,0 +1,11 @@
+TODO:
+
+- Make renderHTML work with non-rstudio installations. 
+  There is something weird happening with different versions of pandoc than
+  the one that ships with RStudio.
+  This is probably an issue with my own pandoc, as I can't generate
+  documentation either.
+- Create standard doc template.
+- Documentation headers for functions.
+- Parse examples file(s).
+- Interactive example editing.
