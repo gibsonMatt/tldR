@@ -3,19 +3,19 @@
 
 
 #Constructor
-tldr <- function(function_name){
-
+tldr <- function(name){
 
     #######Lookup markdown file using githup api###################################
     #Lookup code goes here
-    md <- "../pages/paste/paste.md" #temp example file
+    path <- tldr_get(name, 1)
+    md <- paste(path, "/", name, ".md", sep='')#temp example file
     ###############################################################################
 
     ####Note###
     #We could also do the conversion to HTML here instead of in the renderHTML method
     ##########
 
-    value <- list(function_name = function_name, markdown_dir = md)
+    value <- list(name = name, doc = md, examples=list(), package="")
     attr(value, "class") <- "tldr"
 
     ##########################################################################################################
@@ -25,13 +25,14 @@ tldr <- function(function_name){
     #renderHTML(value)
     ##########################################################################################################
 
+    renderHTML(value)
     return(value)
 }
 
 
 #Define generic
 renderHTML <- function(object){
-    UseMethod("renderHTML", object)
+    UseMethod("renderHTML", object, package="")
 }
 
 
@@ -42,7 +43,7 @@ renderHTML.default <- function(object){
     file_name <- tempfile(pattern = "doc", tmpdir = tempdir(), fileext = ".html")
 
     #Convert markdown to html and save to temp file
-    a <- rmarkdown::render(input = object$markdown_dir, output_format = html_document(theme = "flatly"), output_dir = tempdir(), output_file = "doc.html", quiet = T)
+    a <- rmarkdown::render(input = object$doc, output_format = html_document(theme = "flatly"), output_dir = tempdir(), output_file = "doc.html", quiet = T)
 
     #Show html in viewer
     rstudioapi::viewer(a)
