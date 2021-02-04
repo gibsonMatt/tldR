@@ -3,12 +3,13 @@
 
 
 #Constructor
+
 #' @export
 tldr <- function(name){
 
     #######Lookup markdown file using githup api###################################
     #Lookup code goes here
-    path <- tldr_get(name, 1)
+    path <- tldR:::tldr_get(name, 1)
     md <- paste(path, "/", name, ".md", sep='')#temp example file
     ###############################################################################
 
@@ -32,6 +33,7 @@ tldr <- function(name){
 
 
 #Define generic
+
 #' @export
 renderHTML <- function(object){
     UseMethod("renderHTML", object, package="")
@@ -39,6 +41,7 @@ renderHTML <- function(object){
 
 
 #Default method for tldr
+
 #' @export
 renderHTML.default <- function(object){
 
