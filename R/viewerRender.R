@@ -3,6 +3,7 @@
 
 
 #Constructor
+#' @export
 tldr <- function(name){
 
     #######Lookup markdown file using githup api###################################
@@ -31,12 +32,14 @@ tldr <- function(name){
 
 
 #Define generic
+#' @export
 renderHTML <- function(object){
     UseMethod("renderHTML", object, package="")
 }
 
 
 #Default method for tldr
+#' @export
 renderHTML.default <- function(object){
 
     #Create temp file (needed to render to viewer, for security reasons)

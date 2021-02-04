@@ -1,5 +1,6 @@
 # Initiate documentation directory for the library. 
 
+#' @export
 tldr_init <- function () {
     path <- paste(.libPaths()[pathno])
     git2r::clone(
