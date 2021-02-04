@@ -4,7 +4,15 @@
 
 #Constructor
 
+#' Generate documentation for a function.
+#'
+#' 
+#' @param love Do you love cats? Defaults to TRUE.
+#' @keywords tldr
 #' @export
+#' @examples
+#' tldr()
+
 tldr <- function(name){
 
     #######Lookup markdown file using githup api###################################
@@ -45,8 +53,8 @@ renderHTML <- function(object){
 #' @export
 renderHTML.default <- function(object){
 
-    #Create temp file (needed to render to viewer, for security reasons)
-    file_name <- tempfile(pattern = "doc", tmpdir = tempdir(), fileext = ".html")
+    ##Create temp file (needed to render to viewer, for security reasons)
+    #file_name <- tempfile(pattern = "doc", tmpdir = tempdir(), fileext = ".html")
 
     #Convert markdown to html and save to temp file
     a <- rmarkdown::render(
