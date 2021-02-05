@@ -69,11 +69,3 @@ renderHTML.tldr <- function(object){
     #Show html in viewer
     rstudioapi::viewer(a)
 }
-
-
-
-
-
-# Render the doc
-# renderHTML(t)
-
