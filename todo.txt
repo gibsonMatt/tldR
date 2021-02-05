@@ -2,20 +2,14 @@ TODO:
 
 - Make renderHTML work with non-rstudio installations. 
   e.g., launch browser to render document.
-- There is something weird happening with different versions of pandoc than
-  the one that ships with RStudio.
-  This is probably an issue with my own pandoc, as I can't generate
-  documentation either.
 - Create standard doc template.
 - Documentation headers for functions.
 - Parse examples file(s).
-- Interactive example editing.
+- Interactive example editing from the console or rstudio.
 - Text menu to select function if e.g., redundantly named functions are loaded.
 - Parse function name, including scoping of namespace.
-  Recognize "package::function", "function" and resolve function using above if
-  other than a single function is available.
+  Recognize "package::function", "function" and resolve function using above if other than a single function is available.
 - Search examples using tags, names, etc.
-- Figure out why I can't fucking generate documentation!
 - Generate documentation template function, like devtools::create()
 - Contribute to docs repo from github API?
 - Initialize docs repo automatically if needed; skip if not.
