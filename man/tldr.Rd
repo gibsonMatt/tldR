@@ -4,10 +4,12 @@
 \alias{tldr}
 \title{Instantiate tldR manpage.}
 \usage{
-tldr(name)
+tldr(name, render = TRUE)
 }
 \arguments{
 \item{name}{A string containing the slash-saparated package/function query.}
+
+\item{render}{Bool indicating whether to render the manpage or not.}
 }
 \value{
 An object of class 'tldr'
