@@ -4,15 +4,16 @@
 
 #Constructor
 
-#' Generate documentation for a function.
+#' Instantiate tldR manpage.
 #'
 #' 
-#' @param love Do you love cats? Defaults to TRUE.
+#' @param name A string containing the slash-saparated package/function query.
 #' @keywords tldr
-#' @export
+#' @return An object of class 'tldr'
 #' @examples
-#' tldr()
-
+#' t <- tldr("base/paste", render=FALSE)
+#' tldr("base/paste")
+#' @export
 tldr <- function(name){
 
     #######Lookup markdown file using githup api###################################
@@ -40,18 +41,15 @@ tldr <- function(name){
 }
 
 
-#Define generic
+# Render HTML
+## Define generic
 
-#' @export
 renderHTML <- function(object){
     UseMethod("renderHTML", object)
 }
 
-
-#Default method for tldr
-
-#' @export
-renderHTML.default <- function(object){
+## tldr method
+renderHTML.tldr <- function(object){
 
     ##Create temp file (needed to render to viewer, for security reasons)
     #file_name <- tempfile(pattern = "doc", tmpdir = tempdir(), fileext = ".html")
@@ -72,9 +70,7 @@ renderHTML.default <- function(object){
 
 
 
-#Create new tldr object
-t <- tldr("base/paste")
 
-#Render the doc
+# Render the doc
 # renderHTML(t)
 
