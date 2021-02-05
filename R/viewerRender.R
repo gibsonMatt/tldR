@@ -8,13 +8,14 @@
 #'
 #' 
 #' @param name A string containing the slash-saparated package/function query.
+#' @param render Bool indicating whether to render the manpage or not.
 #' @keywords tldr
 #' @return An object of class 'tldr'
 #' @examples
 #' t <- tldr("base/paste", render=FALSE)
 #' tldr("base/paste")
 #' @export
-tldr <- function(name){
+tldr <- function(name, render=TRUE){
 
     #######Lookup markdown file using githup api###################################
     #Lookup code goes here
@@ -36,7 +37,9 @@ tldr <- function(name){
     #renderHTML(value)
     ##########################################################################################################
 
-    renderHTML(value)
+    if (isTRUE(render)) {
+        renderHTML(value)
+    }
     return(value)
 }
 
